@@ -23,3 +23,7 @@ Route::get('/', function () {
 Route::get('/schedules', [ScheduleController::class, 'index'])->name('schedules.index');
 Route::get('/schedules/create', [ScheduleController::class, 'create'])->name('schedules.create');
 Route::post('/schedules/store', [ScheduleController::class, 'store'])->name('schedules.store');
+
+use App\Http\Controllers\ArduinoController;
+
+Route::get('/get-schedule', [ArduinoController::class, 'getSchedule']);
