@@ -17,7 +17,7 @@
     }
     body{
         background-image: url('{{ asset('images/lastcurve.png') }}'); 
-        background-size: cover; 
+        background-size:100%; 
         background-repeat: no-repeat;
     }
     .navbar{
