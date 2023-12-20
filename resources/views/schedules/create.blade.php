@@ -213,10 +213,10 @@
         <div class="inputs">
             <form method="post" action="{{ route('schedules.store') }}">
                 @if(session('message'))
-                <p>{{ session('message') }}</p>
+                <p style="color: green; background-color: #dff0d8; border: 1px solid #d0e9c6; padding: 10px; margin-bottom: 15px;">{{ session('message') }}</p>
                 @endif
                 @if(session('error'))
-                <p>{{ session('error') }}</p>
+                <p style="color: red; background-color: #f2dede; border: 1px solid #ebccd1; padding: 10px; margin-bottom: 15px;">{{ session('error') }}</p>
                 @endif
                 @csrf
                 <label for="date">Date</label><br>
