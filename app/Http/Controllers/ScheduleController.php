@@ -110,8 +110,6 @@ class ScheduleController extends Controller
             $timeSlots = $request->input('time_slots');
             $labelTimeSlots = $request->input('label_time_slots');
 
-            // Check if the schedule for the given date already exists
-            $scheduleExists = $this->database->getReference("schedules/$date")->getSnapshot()->exists();
 
             // Check if the selected date is today
             $selectedDate = Carbon::parse($request->input('date'))->format('Y-m-d');
@@ -155,7 +153,7 @@ class ScheduleController extends Controller
         } catch (\Exception $e) {
             Log::error('Firebase Error:', ['message' => $e->getMessage(), 'trace' => $e->getTrace()]);
             // Handle the error appropriately (e.g., return an error response)
-            return redirect()->route('schedules.create')->with('error', 'Error occurred while updating schedule');
+            return redirect()->route('schedules.create')->with('error', 'Error occurred while creating schedule');
         }
     }
 }
